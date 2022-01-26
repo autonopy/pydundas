@@ -92,6 +92,10 @@ class Cube:
         """Triggers a warehousing."""
         self.api.session.post('datacube/warehouse/' + self.id, json={})
 
+    def buildstorage(self):
+        """Triggers a 'Build Warehouse' event"""
+        self.api.session.post('datacube/buildstorage/' + self.id, json={})
+
     def json(self):
         """Return proper JSONised data."""
         return json.dumps(self.data)
